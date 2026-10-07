@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo List API</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>ToDo List</h1>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <input
+        id="todo-input"
+        class="todo-input"
+        type="text"
+        placeholder="Что нужно сделать?"
+        maxlength="200"
+      />
+      <button id="add-btn" class="btn btn-primary" type="submit">Добавить</button>
+    </form>
+
+    <div class="toolbar">
+      <input
+        id="search-input"
+        class="search-input"
+        type="text"
+        placeholder="Поиск по тексту..."
+      />
+
+      <div class="filters" role="group" aria-label="Фильтр задач">
+        <button class="filter-btn is-active" data-filter="all" type="button">Все</button>
+        <button class="filter-btn" data-filter="active" type="button">Активные</button>
+        <button class="filter-btn" data-filter="completed" type="button">Выполненные</button>
+      </div>
+    </div>
+
+    <div class="counters">
+      <span>Всего: <b id="count-all">0</b></span>
+      <span>Активных: <b id="count-active">0</b></span>
+      <span>Выполненных: <b id="count-completed">0</b></span>
+    </div>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <div id="empty-state" class="empty-state" hidden>Ничего не найдено</div>
+
+    <footer class="footer">
+      <button id="clear-completed-btn" class="btn btn-danger" type="button">
+        Удалить выполненные
+      </button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
